@@ -235,7 +235,11 @@
             'text', get_option('admin_email'),
             array('display' => 'extended', 'help' => 'The messages submitted from the contact form will be sent to this email address.')
         );
-        
+        $this->admin_option('General',
+            'Yahoo ID', 'yahoo_support', 
+            'text', get_option('yahoo_support'), 
+            array('display' => 'extended')
+        );        
     
     /*********************************************
      * Layout Options

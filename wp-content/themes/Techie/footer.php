@@ -1,5 +1,9 @@
 <?php global $theme; ?>
-    
+<div id="horizontal-scroll">
+	<h1 class="page-title">Thương hiệu</h1>
+	<?php echo do_shortcode('[ihrss-gallery type="GROUP1" w="820" h="34" speed="1" bgcolor="#FFFFFF" gap="5" random="YES"]'); ?> 
+</div>
+
 <?php if($theme->display('footer_widgets')) { ?>
     <div id="footer-widgets" class="clearfix">
     	<div class="footer-widgets-inner">

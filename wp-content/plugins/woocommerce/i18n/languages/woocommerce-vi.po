@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce v2.0.9\n"
 "Report-Msgid-Bugs-To: https://github.com/woothemes/woocommerce/issues\n"
 "POT-Creation-Date: 2013-04-29 16:02:06+00:00\n"
-"PO-Revision-Date: 2013-09-05 13:33+0700\n"
+"PO-Revision-Date: 2013-10-25 14:11+0700\n"
 "Last-Translator: Thach Pham <ezit92@gmail.com>\n"
 "Language-Team: \n"
 "Language: vi_VN\n"
@@ -27,7 +27,7 @@ msgstr "Chèn shortcode"
 # @ woocommerce
 #: assets/js/admin/editor_plugin_lang.php:6
 msgid "Product price/cart button"
-msgstr "Giá sản phẩm/Nút giỏ hàng"
+msgstr "Giá/Nút giỏ hàng"
 
 # @ woocommerce
 #: assets/js/admin/editor_plugin_lang.php:7
@@ -2173,7 +2173,7 @@ msgstr ""
 #: templates/single-product/add-to-cart/simple.php:42
 #: templates/single-product/add-to-cart/variable.php:83
 msgid "Add to cart"
-msgstr "Thêm vào giỏ"
+msgstr "Mua hàng"
 
 # @ woocommerce
 #: classes/emails/class-wc-email-customer-completed-order.php:24

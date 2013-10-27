@@ -35,12 +35,29 @@ function vsrp()
 	{
 		$dis_num_user = 5;
 	}
-
-	$sSql = query_posts('cat='.$vsrp_select_categories.'&orderby='.$vsrp_select_orderby.'&order='.$vsrp_select_order.'&showposts='.$num_user);
-
+	$args = array(
+//		'category__in' => array(35, 0) ,
+		'orderby' => $vsrp_select_orderby,
+		'order' => $vsrp_select_order,
+		'showpost' => $num_user,
+//		'post_type' => 'product',
+		'post_status' => 'publish',
+		'tax_query' 			=> array(
+	    	array(
+		    	'taxonomy' 		=> 'product_cat',
+				'terms' 		=> explode(',', $vsrp_select_categories),
+				'field' 		=> 'id',
+				'operator' 		=> 'IN'
+			)
+	    )
+	);
+	//$sSql = query_posts('cat='.$vsrp_select_categories.'&orderby='.$vsrp_select_orderby.'&order='.$vsrp_select_order.'&showposts='.$num_user);
+	$sSql = query_posts($args);
+	
 	$vsrp_data = $sSql;
 	$vsrp_html = "";
 	$vsrp_x = "";
+
 	if ( ! empty($vsrp_data) ) 
 	{
 		$vsrp_count = 0;
@@ -53,13 +70,14 @@ function vsrp()
 			$vsrp_post_title = substr($vsrp_post_title, 0, 130);
 
 			$dis_height = $dis_num_height."px";
-			$vsrp_html = $vsrp_html . "<div class='vsrp_div' style='height:$dis_height;padding:2px 0px 2px 0px;'>"; 
+			$vsrp_html = $vsrp_html . "<div class='vsrp_div' style='height:$dis_height;padding:2px 0px 2px 0px;'>";
+			//$vsrp_html .= get_the_post_thumbnail($vsrp_data->ID, array(32,32));
 			$vsrp_html = $vsrp_html . "<a href='$get_permalink'>$vsrp_post_title</a>";
 			$vsrp_html = $vsrp_html . "</div>";
 			
 			$vsrp_post_title = mysql_real_escape_string(trim($vsrp_post_title));
 			$get_permalink = mysql_real_escape_string($get_permalink);
-			$vsrp_x = $vsrp_x . "vsrp_array[$vsrp_count] = '<div class=\'vsrp_div\' style=\'height:$dis_height;padding:2px 0px 2px 0px;\'><a href=\'$get_permalink\'>$vsrp_post_title</a></div>'; ";	
+			$vsrp_x = $vsrp_x . "vsrp_array[$vsrp_count] = '<div class=\'vsrp_div\' style=\'height:$dis_height;padding:2px 0px 2px 0px;\'><a href=\'$get_permalink\'><div class=\'image\'>". get_the_post_thumbnail($vsrp_data->ID, 'large'). "</div><div class=\'title\'>$vsrp_post_title</div></a></div>'; ";	
 			$vsrp_count++;
 			
 		}
@@ -77,7 +95,7 @@ function vsrp()
 		$vsrp_height1 = $dis_num_height."px";
 		?>	
 		<div style="padding-top:8px;padding-bottom:8px;">
-			<div style="text-align:left;vertical-align:middle;text-decoration: none;overflow: hidden; position: relative; margin-left: 1px; height: <?php echo $vsrp_height1; ?>;" id="vsrp_Holder">
+			<div style="text-align:left;vertical-align:middle;text-decoration: none;overflow: hidden; position: relative; margin-left: 1px; height: <?php echo $vsrp_height1; ?>; width: 100%;" id="vsrp_Holder">
 				<?php echo $vsrp_html; ?>
 			</div>
 		</div>
@@ -280,4 +298,104 @@ add_action('init', 'vsrp_add_javascript_files');
 add_action("plugins_loaded", "vsrp_init");
 register_activation_hook(__FILE__, 'vsrp_install');
 register_deactivation_hook(__FILE__, 'vsrp_deactivation');
+
+/*edited by ewp*/
+function get_vsrp() 
+{
+	global $wpdb;
+	$num_user = get_option('vsrp_select_num_user');
+	$dis_num_user = get_option('vsrp_dis_num_user');
+	$dis_num_height = get_option('vsrp_dis_num_height');
+	$vsrp_select_categories = get_option('vsrp_select_categories');
+	$vsrp_select_orderby = get_option('vsrp_select_orderby');
+	$vsrp_select_order = get_option('vsrp_select_order');
+	
+	if(!is_numeric($num_user))
+	{
+		$num_user = 5;
+	} 
+	if(!is_numeric($dis_num_height))
+	{
+		$dis_num_height = 30;
+	}
+	if(!is_numeric($dis_num_user))
+	{
+		$dis_num_user = 5;
+	}
+
+	$sSql = query_posts('cat='.$vsrp_select_categories.'&orderby='.$vsrp_select_orderby.'&order='.$vsrp_select_order.'&showposts='.$num_user);
+
+	$vsrp_data = $sSql;
+	$vsrp_html = "";
+	$vsrp_x = "";
+
+	if ( ! empty($vsrp_data) ) 
+	{
+		$vsrp_count = 0;
+		foreach ( $vsrp_data as $vsrp_data ) 
+		{
+			$vsrp_post_title = $vsrp_data->post_title;
+			
+			$get_permalink = get_permalink($vsrp_data->ID);
+			
+			$vsrp_post_title = substr($vsrp_post_title, 0, 130);
+
+			$dis_height = $dis_num_height."px";
+			$vsrp_html = $vsrp_html . "<div class='vsrp_div' style='height:$dis_height;padding:2px 0px 2px 0px;'>";
+			//$vsrp_html .= get_the_post_thumbnail($vsrp_data->ID, array(32,32));
+			$vsrp_html = $vsrp_html . "<a href='$get_permalink'>$vsrp_post_title</a>";
+			$vsrp_html = $vsrp_html . "</div>";
+			
+			$vsrp_post_title = mysql_real_escape_string(trim($vsrp_post_title));
+			$get_permalink = mysql_real_escape_string($get_permalink);
+			$vsrp_x = $vsrp_x . "vsrp_array[$vsrp_count] = '<div class=\'vsrp_div\' style=\'height:$dis_height;padding:2px 0px 2px 0px;\'><a href=\'$get_permalink\'><div class=\'image\'>". get_the_post_thumbnail($vsrp_data->ID, array(56,56)). "</div><div class=\'title\'>$vsrp_post_title</div></a></div>'; ";	
+			$vsrp_count++;
+			
+		}
+		$dis_num_height = $dis_num_height + 4;
+		if($vsrp_count >= $dis_num_user)
+		{
+			$vsrp_count = $dis_num_user;
+			$vsrp_height = ($dis_num_height * $dis_num_user);
+		}
+		else
+		{
+			$vsrp_count = $vsrp_count;
+			$vsrp_height = ($vsrp_count*$dis_num_height);
+		}
+		$vsrp_height1 = $dis_num_height."px";
+		$str = "
+		<div style=\"padding-bottom:8px;\">
+			<div style=\"text-align:left;vertical-align:middle;text-decoration: none;overflow: hidden; position: relative; margin-left: 1px; height: $vsrp_height1;\" id=\"vsrp_Holder\">
+				$vsrp_html
+			</div>
+		</div>
+		<script type=\"text/javascript\">
+		var vsrp_array	= new Array();
+		var vsrp_obj	= '';
+		var vsrp_scrollPos 	= '';
+		var vsrp_numScrolls	= '';
+		var vsrp_heightOfElm = '$dis_num_height'; // Height of each element (px)
+		var vsrp_numberOfElm = '$vsrp_count';
+		var vsrp_scrollOn 	= 'true';
+		function vsrp_createscroll() 
+		{
+			$vsrp_x
+			vsrp_obj	= document.getElementById('vsrp_Holder');
+			vsrp_obj.style.height = (vsrp_numberOfElm * vsrp_heightOfElm) + 'px'; // Set height of DIV
+			vsrp_content();
+		}
+		</script>
+		<script type=\"text/javascript\">
+		vsrp_createscroll();
+		</script>";
+
+	}
+	else
+	{
+		$str = "<div style='padding-bottom:5px;padding-top:5px;'>No data available!</div>";
+	}
+	wp_reset_query();
+	return $str;
+}
 ?>

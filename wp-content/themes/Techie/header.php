@@ -71,8 +71,10 @@
             <?php $theme->hook('menu_secondary'); ?>
         </div>
     <?php } ?>
+    <?php /*
     <div class="slider-container">
 		<div class="slider-inner">
 			<?php echo do_shortcode("[metaslider id=80]"); ?>
 		</div>
 	</div>
+	*/ ?>

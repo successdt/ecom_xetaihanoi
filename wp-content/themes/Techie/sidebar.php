@@ -14,8 +14,6 @@
     
 </div><!-- #sidebar-primary -->
 
-<?php 
-/*
 <div id="sidebar-secondary">
 
     <?php
@@ -26,4 +24,3 @@
     ?>
     
 </div><!-- #sidebar-secondary -->
-*/ ?>
