@@ -196,8 +196,19 @@
 	add_filter( 'woocommerce_product_tabs', 'sb_woo_remove_reviews_tab', 98);
 	function sb_woo_remove_reviews_tab($tabs) {
 	
-		unset($tabs['reviews']);
-	
-	return $tabs;
-}
+			unset($tabs['reviews']);
+		
+		return $tabs;
+	}
+	add_action('woocommerce_after_add_to_cart_button', 'add_button');
+	function add_button () {
+		$option = get_option('techie_theme_options');
+		if(isset($option['yahoo_support'])){
+			echo '
+			<a href="ymsgr:sendim?' . $option['yahoo_support'] .'" title="Hỗ trợ" class="yahoo-btn" style="margin-left: 5px;">
+				Hỗ trợ
+			</a>';	
+		}
+		
+	}
 ?>

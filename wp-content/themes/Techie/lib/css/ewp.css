@@ -490,3 +490,23 @@ li ul.sub-menu li a:hover {
 	background: #4A9408;
 	color: #FFF !important;
 }
+a.yahoo-btn {
+	background: url('../images/support_bg.png') no-repeat #92D050;
+	background-size: 25px;
+	padding: 6px 10px 6px 30px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFF;
+	text-decoration: none;
+	float: left;
+}
+.entry-summary .product-title {
+	margin-top: 0;
+}
+#searchform input {
+	height: 25px;
+	width: 157px !important;
+}
+.woocommerce .page-title {
+	margin-bottom: 10px !important;
+}

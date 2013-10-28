@@ -51,16 +51,16 @@
 				<div class="pull-left">
 					<?php if($theme->display('menu_primary')) {   $theme->hook('menu_primary');  } ?>
 				</div>
+				<?php /*
 				<div class="pull-right nav-search">
 					<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 					    <div>
 					        <input type="text" value="" name="s" id="s" placeholder="Tìm kiếm...." />
 					        <input type="submit" id="searchsubmit" value="" />
 					    </div>
-					</form>					
-				
+					</form>
 				</div>
-		
+				*/ ?>
 			</div>
 		</div>
         
