@@ -160,8 +160,17 @@ body {
 .home-featured h1, h1.page-title, h2.page-title, .title.sigle-post, h1.product_title, .related-posts-title {
 	text-align: left;
 }
+.home-featured h1 a {
+	color: #FFF;
+	font-size: 14px;
+	text-decoration: none;
+}
 h1.product_title, .related-posts-title {
 	margin-bottom: 20px !important;
+}
+.home-featured .woocommerce, .home-featured .woocommerce ul {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
 }
 .title.sigle-post {
 	margin-bottom: 10px !important;
