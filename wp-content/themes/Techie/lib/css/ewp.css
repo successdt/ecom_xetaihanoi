@@ -523,3 +523,9 @@ a.yahoo-btn {
 .woocommerce .page-title {
 	margin-bottom: 10px !important;
 }
+#tab-photos {
+	display: table-cell !important;
+}
+#tab-tab-custom h2:first-child, #tab-photos h2:first-child {
+	display: none;
+}
