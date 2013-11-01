@@ -460,7 +460,7 @@ div.images {
 }
 .widget_recent_entries li, .wp_statistics_show_widget li {
 	min-height: 30px;
-	padding: 5px 0 !important;
+	padding: 5px 5px !important;
 	line-height: 20px;
 	border-bottom: 1px solid #CCC;
 }
@@ -544,4 +544,8 @@ a.yahoo-btn {
 	background: #C51920;
 	color: #FFF;
 	cursor: pointer;
+}
+.textwidget {
+	padding-left: 5px;
+	padding-top: 5px;
 }
