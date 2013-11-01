@@ -458,11 +458,14 @@ div.images {
 #horizontal-scroll > table td {
 	padding: 0;
 }
-.widget_recent_entries li {
+.widget_recent_entries li, .wp_statistics_show_widget li {
 	min-height: 30px;
 	padding: 5px 0 !important;
 	line-height: 20px;
 	border-bottom: 1px solid #CCC;
+}
+.wp_statistics_show_widget li {
+	padding-left: 10px !important;
 }
 .quantity.buttons_added, .woocommerce .images .thumbnails , .posted_in {
 	display: none;
@@ -528,4 +531,17 @@ a.yahoo-btn {
 }
 #tab-tab-custom h2:first-child, #tab-photos h2:first-child {
 	display: none;
+}
+.widget_advanced-search-widget label {
+	display: none;
+}
+.widget_advanced-search-widget input, input#s{
+	margin-top: 5px;
+	width: 190px !important;
+}
+.widget_advanced-search-widget #searchsubmit {
+	width: 192px !important;
+	background: #C51920;
+	color: #FFF;
+	cursor: pointer;
 }
