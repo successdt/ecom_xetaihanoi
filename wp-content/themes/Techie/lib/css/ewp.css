@@ -549,3 +549,40 @@ a.yahoo-btn {
 	padding-left: 5px;
 	padding-top: 5px;
 }
+#text-10 {
+	position: fixed;
+	right: 0;
+	top: 200px;
+	border: 2px solid #D51317;
+	border-radius: 5px 0 0 5px;
+	border-right: none;
+	background: #FFF;
+	color: #D51317;
+	padding: 5px;
+	padding-top: 0;
+	display: none;
+}
+#text-10 h5 {
+	font-size: 17px;
+	line-height: 20px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 0;
+}
+#text-10 .hotlineNumber {
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px 5px 10px 39px;
+	border-left: solid 1px #d2d2d2;
+	padding-left: 5px;
+	
+}
+#text-10 .contentHotline {
+	background: #fff url(../images/HotlinePhonea.png) no-repeat 5px 45px;
+	padding: 5px 0;
+}
+@media only screen and (min-width: 1200px) {
+	#text-10 {
+		display: block;
+	}
+}
