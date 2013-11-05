@@ -27,7 +27,12 @@
     	<div style="width: 1000px;">
         	<div class="logo">
 	        <?php if ($theme->get_option('themater_logo_source') == 'image') { ?> 
-	            <a href="<?php echo home_url(); ?>"><img src="<?php $theme->option('logo'); ?>" width="1000" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" /></a>
+	            <a href="<?php echo home_url(); ?>">
+	            	<?php /*
+						<img src="<?php $theme->option('logo'); ?>" width="1000" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" />
+					*/ ?>
+					<embed src="<?php $theme->option('logo'); ?>" quality="high" type="application/x-shockwave-flash" wmode="transparent" width="1000" height="149" pluginspage="http://www.macromedia.com/go/getflashplayer" allowScriptAccess="always"></embed>
+				</a>
 	        <?php } else { ?> 
 	            <?php if($theme->display('site_title')) { ?> 
 	                <h1 class="site_title"><a href="<?php echo home_url(); ?>"><?php $theme->option('site_title'); ?></a></h1>
