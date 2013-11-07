@@ -593,3 +593,6 @@ a.yahoo-btn {
 .woocommerce-tabs p, .woocommerce-tabs span {
 	line-height: 20px !important;
 }
+p.woocommerce-result-count {
+	display: none;
+}
