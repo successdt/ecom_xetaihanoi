@@ -148,7 +148,7 @@ body {
 	padding: 2px;
 }
 .widget-container .widget h3, .custom-widget h3, .home-featured h1, h1.page-title, h2.page-title, .title.sigle-post, h1.product_title, .related-posts-title {
-	background: #000;
+	background: #303030;
 	color: #FFFFFF;
 	text-align: center;
 	font-size: 14px;
@@ -186,7 +186,7 @@ h1.product_title, .related-posts-title {
 	background: #FFFFFF;
 	color: #000;
 	text-align: left;
-	padding: 8px;
+	padding: 6px 10px;
 	font-size: 13px;
 	border-bottom: 1px solid #999;
 	display: block;
@@ -592,4 +592,7 @@ a.yahoo-btn {
 }
 .woocommerce-tabs p, .woocommerce-tabs span {
 	line-height: 20px !important;
+}
+p.woocommerce-result-count {
+	display: none;
 }
