@@ -186,7 +186,7 @@ h1.product_title, .related-posts-title {
 	background: #FFFFFF;
 	color: #000;
 	text-align: left;
-	padding: 10px;
+	padding: 8px;
 	font-size: 13px;
 	border-bottom: 1px solid #999;
 	display: block;
@@ -459,8 +459,8 @@ div.images {
 	padding: 0;
 }
 .widget_recent_entries li, .wp_statistics_show_widget li {
-	min-height: 30px;
-	padding: 5px 5px !important;
+	min-height: 22px;
+	padding: 2px 5px !important;
 	line-height: 20px;
 	border-bottom: 1px solid #CCC;
 }
@@ -589,4 +589,7 @@ a.yahoo-btn {
 	#text-10 {
 		display: block;
 	}
+}
+.woocommerce-tabs p, .woocommerce-tabs span {
+	line-height: 20px !important;
 }
