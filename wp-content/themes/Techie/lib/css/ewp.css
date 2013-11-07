@@ -527,7 +527,7 @@ a.yahoo-btn {
 	margin-bottom: 10px !important;
 }
 #tab-photos {
-	display: table-cell !important;
+	display: table-cell ;
 }
 #tab-tab-custom h2:first-child, #tab-photos h2:first-child {
 	display: none;
