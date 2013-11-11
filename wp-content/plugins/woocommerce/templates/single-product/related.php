@@ -26,7 +26,7 @@ $args = apply_filters('woocommerce_related_products_args', array(
 ) );
 
 $products = new WP_Query( $args );
-
+$columns = 3;
 $woocommerce_loop['columns'] 	= $columns;
 
 if ( $products->have_posts() ) : ?>
