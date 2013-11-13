@@ -257,9 +257,9 @@ ul.sub-menu li {
 }
 .home-featured .woocommerce h3, .woocommerce ul.products li.product h3 {
 	background: none;
-	font-weight: normal;
 	color: #000;
 	width: 200px;
+	padding-top: 15px !important;
 }
 .home-featured .woocommerce img, img.attachment-shop_catalog {
 	margin: 0 !important;
