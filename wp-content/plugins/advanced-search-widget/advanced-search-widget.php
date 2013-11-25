@@ -171,11 +171,12 @@ class Advanced_Search_Widget extends WP_Widget {
 	        $form = '<form role="search" method="get" id="searchform" action="' . esc_url( home_url( '/' ) ) . '" >
         	<div class="widget_search"><label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
 	        <input type="text" value="" name="s" id="s" />
-		<input type="hidden" name="posttype" value="' .$instance['posttype']. '" />
+		
 		<input type="hidden" name="widget" value="' .$widget_id. '" />
         	<input type="submit" id="searchsubmit" value="'. esc_attr__('Search') .'" />
 	        </div>
         	</form>';
+		//<input type="hidden" name="posttype" value="' .$instance['posttype']. '" />
 		echo $form;
 		echo $after_widget;
 	}
