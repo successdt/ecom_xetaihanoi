@@ -246,6 +246,9 @@ ul.sub-menu li {
 #sidebar-primary .widget-container {
 	overflow: visible;
 }
+#dc_jqverticalmegamenu_widget-2-item ul.menu.right {
+	border-bottom: none !important;
+}
 #dc_jqverticalmegamenu_widget-2-item ul li a {
 	background-image: none !important;
 }
@@ -255,6 +258,8 @@ ul.sub-menu li {
 }
 #dc_jqverticalmegamenu_widget-2-item ul.right li a {
 	padding: 5px 38px 5px 15px !important;
+	border-left: none !important;
+	border-right: none !important;
 }
 #dc_jqverticalmegamenu_widget-2-item ul li a .dc-mega-icon {
 	top: 10px !important;
@@ -267,7 +272,7 @@ ul.sub-menu li {
 	background: #FFF !important;
 }
 #dc_jqverticalmegamenu_widget-2-item ul li .sub-container.non-mega li a:hover {
-	background: #C51920 !important; 
+	background: #4A9408 !important; 
 	border: none !important;
 }
 /*home page*/
