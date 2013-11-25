@@ -243,7 +243,33 @@ ul.sub-menu li {
 #sidebar-secondary {
 	margin-left: 0;
 }
-
+#sidebar-primary .widget-container {
+	overflow: visible;
+}
+#dc_jqverticalmegamenu_widget-2-item ul li a {
+	background-image: none !important;
+}
+#dc_jqverticalmegamenu_widget-2-item ul li a:hover {
+	background: #4A9408;
+	color: #FFF !important;
+}
+#dc_jqverticalmegamenu_widget-2-item ul.right li a {
+	padding: 5px 38px 5px 15px !important;
+}
+#dc_jqverticalmegamenu_widget-2-item ul li a .dc-mega-icon {
+	top: 10px !important;
+}
+#dc_jqverticalmegamenu_widget-2-item ul li .sub-container {
+	height: auto;
+}
+#dc_jqverticalmegamenu_widget-2-item ul li .sub-container.non-mega .sub {
+	padding: 0 !important;
+	background: #FFF !important;
+}
+#dc_jqverticalmegamenu_widget-2-item ul li .sub-container.non-mega li a:hover {
+	background: #C51920 !important; 
+	border: none !important;
+}
 /*home page*/
 .home-featured {
 	margin-top: 0;
