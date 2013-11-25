@@ -126,6 +126,7 @@ body {
 }
 #sidebar-primary {
 	margin-left: -770px;
+	overflow: visible;
 }
 #content {
 	width: 560px;
